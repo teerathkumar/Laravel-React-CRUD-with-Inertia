@@ -13,5 +13,5 @@ For installation please follow these steps:
 
 Enjoy...
 If you face any problem, please message here:
-*[LinkedIn](https://www.linkedin.com/in/teerath-rassani)*
-*[LinkedIn](https://wa.me/923332511584)*
++ *[LinkedIn](https://www.linkedin.com/in/teerath-rassani)*
++ *[WhatsApp](https://wa.me/923332511584)*
