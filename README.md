@@ -12,3 +12,6 @@ For installation please follow these steps:
 8. run `php artisan serve` in new terminal by giving project path
 
 Enjoy...
+If you face any problem, please message here:
+*[LinkedIn](https://www.linkedin.com/in/teerath-rassani)*
+*[LinkedIn](https://wa.me/923332511584)*
