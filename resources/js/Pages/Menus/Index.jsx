@@ -12,7 +12,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 import TreeView from "react-accessible-treeview";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import cx from "classnames";
-import "../../../css/styles.css";
+import "../../../assets/styles.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
