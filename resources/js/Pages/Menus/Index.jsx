@@ -22,6 +22,29 @@ export default function Dashboard(props) {
     const { menus: initialMenus } = usePage().props; // Get menus from props
 
     const [menus, setMenus] = useState(initialMenus); // Initialize state with menus
+    const [hover, setHover] = useState(false);
+    const onHover = (id) => {
+        setHover(true);
+        toggleButton(id, true);
+        // console.log("hover: "+id);
+    };
+
+    const onLeave = (id) => {
+        setHover(false);
+        toggleButton(id, false);
+        // console.log("Leave: "+id);
+    };
+
+    const toggleButton = (id, status)=>{
+        if(!status) {
+            document.getElementById("my_id_"+id).style.display = "none";
+
+        } else {
+
+            document.getElementById("my_id_"+id).style.display = "block";
+        }
+    }
+
 
     const { data, setData, errors, post } = useForm({
 
@@ -51,8 +74,15 @@ export default function Dashboard(props) {
     const [manuallySelectedNodes, setManuallySelectiedNodes] = useState([]);
 
     const [modal, setModal] = useState(false);
-
-    const toggle = () => setModal(!modal);
+    const [myParentId, setParentId] = useState(false)
+    const modelFunc=(id)=>{
+        toggle();
+        setParentId(id);
+    }
+    const toggle = () => {
+        setModal(!modal)
+        // setParentId(id);
+    };
     const updateTreeData = (list, id, children) => {
         const data = list.map((node) => {
             if (node.id === id) {
@@ -181,7 +211,7 @@ export default function Dashboard(props) {
                         <div className="row m-2">
                             <input type={"number"} placeholder={"Enter Parent ID"} name="parent_id"
 
-                                   value={data.parent_id}
+                                   value={myParentId}
                                    onChange={(e) =>
 
                                        setData("parent_id", e.target.value)
@@ -213,8 +243,7 @@ export default function Dashboard(props) {
 
 
                         <div className="p-6 bg-white border-b border-gray-200">
-                            <button onClick={toggle} style={{marginLeft: 5}} className="btn btn-primary mb-2">Add Menu
-                            </button>
+
                             <div>
 
 
@@ -275,7 +304,8 @@ export default function Dashboard(props) {
                                                 );
                                             };
                                             return (
-                                                <div className={"new-node"}>
+                                                <div className={"new-node"} onMouseEnter={()=>onHover(element.id)}
+                                                     onMouseLeave={()=>onLeave(element.id)}>
                                                     <div
                                                         {...getNodeProps({onClick: handleExpand})}
                                                         style={{marginLeft: 40 * (level - 1)}}
@@ -297,7 +327,9 @@ export default function Dashboard(props) {
                   </span>
 
                                                     </div>
-
+                                                    <button id={"my_id_"+element.id}
+                                                            onClick={() => modelFunc(element.id)}><FaPlusCircle />
+                                                    </button>
                                                 </div>
                                             );
                                         }}

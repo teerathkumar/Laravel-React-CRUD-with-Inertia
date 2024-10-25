@@ -27,3 +27,9 @@
     display: flex;
     align-items: center;
 }
+.show-div {
+    display: block;
+}
+.hide-div {
+    display: none;
+}
