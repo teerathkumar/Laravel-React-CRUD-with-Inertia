@@ -74,10 +74,9 @@ export default function Dashboard(props) {
     const [manuallySelectedNodes, setManuallySelectiedNodes] = useState([]);
 
     const [modal, setModal] = useState(false);
-    const [myParentId, setParentId] = useState(false)
     const modelFunc=(id)=>{
         toggle();
-        setParentId(id);
+        setData("parent_id", id);
     }
     const toggle = () => {
         setModal(!modal)
@@ -211,7 +210,7 @@ export default function Dashboard(props) {
                         <div className="row m-2">
                             <input type={"number"} placeholder={"Enter Parent ID"} name="parent_id"
 
-                                   value={myParentId}
+                                   value={data.parent_id}
                                    onChange={(e) =>
 
                                        setData("parent_id", e.target.value)
