@@ -5,7 +5,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 import TreeView from "react-accessible-treeview";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import cx from "classnames";
-import "@/Pages/Menus/styles.css";
+import "../../css/styles.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {post} from "axios";
 import {useForm} from "@inertiajs/react";
